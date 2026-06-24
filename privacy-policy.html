@@ -1,408 +1,61 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Politique de Confidentialité — Optima Finance</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      background: #0b0e14;
-      color: #e2e8f0;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      font-size: 15px;
-      line-height: 1.75;
-    }
-
-    /* ── HEADER ── */
-    .header {
-      background: #0d1117;
-      border-bottom: 1px solid #1e2d3d;
-      padding: 20px 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .brand-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: radial-gradient(circle at 35% 28%, #67e8f9 0%, #22d3ee 30%, #3b82f6 65%, #1e40af 100%);
-      box-shadow: 0 4px 14px rgba(34,211,238,0.48), inset 0 1px 0 rgba(255,255,255,0.28), inset 0 -2px 4px rgba(0,0,0,0.22);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    .brand-name {
-      font-size: 17px;
-      font-weight: 700;
-      color: #f1f5f9;
-      letter-spacing: -0.01em;
-    }
-    .brand-tagline {
-      font-size: 12px;
-      color: #64748b;
-      font-weight: 400;
-    }
-    .badge-secure {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(16,185,129,0.08);
-      color: #10b981;
-      border: 1px solid rgba(16,185,129,0.25);
-      padding: 5px 12px;
-      border-radius: 6px;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.01em;
-    }
-
-    /* ── HERO ── */
-    .hero {
-      background: linear-gradient(180deg, #0d1117 0%, #0b0e14 100%);
-      border-bottom: 1px solid #1e2d3d;
-      padding: 56px 40px 48px;
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: 32px;
-      font-weight: 800;
-      color: #f8fafc;
-      letter-spacing: -0.03em;
-      margin-bottom: 10px;
-    }
-    .hero-date {
-      font-size: 13px;
-      color: #475569;
-    }
-    .hero-badges {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      margin-top: 24px;
-      flex-wrap: wrap;
-    }
-    .chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 5px 14px;
-      border-radius: 6px;
-      font-size: 12px;
-      font-weight: 600;
-      border: 1px solid;
-    }
-    .chip-green { background: rgba(16,185,129,0.07); color: #10b981; border-color: rgba(16,185,129,0.2); }
-    .chip-blue  { background: rgba(59,130,246,0.07); color: #60a5fa; border-color: rgba(59,130,246,0.2); }
-    .chip-slate { background: rgba(148,163,184,0.07); color: #94a3b8; border-color: rgba(148,163,184,0.15); }
-
-    /* ── CONTENT ── */
-    main {
-      max-width: 780px;
-      margin: 0 auto;
-      padding: 48px 24px 80px;
-    }
-
-    /* Summary card */
-    .summary-card {
-      background: #0f1929;
-      border: 1px solid #1e3a5f;
-      border-left: 3px solid #3b82f6;
-      border-radius: 8px;
-      padding: 20px 24px;
-      margin-bottom: 32px;
-    }
-    .summary-card p {
-      color: #cbd5e1;
-      font-size: 15px;
-    }
-    .summary-card strong { color: #f1f5f9; }
-
-    /* Sections */
-    section {
-      margin-bottom: 28px;
-    }
-    .section-inner {
-      background: #111827;
-      border: 1px solid #1e2937;
-      border-radius: 10px;
-      padding: 26px 28px;
-    }
-    h2 {
-      font-size: 14px;
-      font-weight: 700;
-      color: #94a3b8;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-bottom: 14px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    h2 svg { color: #3b82f6; flex-shrink: 0; }
-    p { color: #94a3b8; margin-bottom: 10px; }
-    p:last-child { margin-bottom: 0; }
-    p strong { color: #e2e8f0; }
-    ul { color: #94a3b8; padding-left: 18px; margin-top: 8px; }
-    li { margin-bottom: 6px; }
-    li strong { color: #e2e8f0; }
-    code {
-      background: #1e2937;
-      color: #60a5fa;
-      padding: 1px 7px;
-      border-radius: 4px;
-      font-family: 'Consolas', 'Courier New', monospace;
-      font-size: 13px;
-    }
-
-    /* Separator */
-    .divider {
-      height: 1px;
-      background: #1e2937;
-      margin: 0 0 28px;
-    }
-
-    /* Footer */
-    footer {
-      border-top: 1px solid #1e2937;
-      padding: 28px 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .footer-brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .footer-icon {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: radial-gradient(circle at 35% 28%, #67e8f9 0%, #22d3ee 30%, #3b82f6 65%, #1e40af 100%);
-      box-shadow: 0 2px 8px rgba(34,211,238,0.40), inset 0 1px 0 rgba(255,255,255,0.25);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .footer-name { font-size: 13px; font-weight: 700; color: #64748b; }
-    .footer-copy { font-size: 12px; color: #334155; }
-    footer a { color: #3b82f6; text-decoration: none; font-size: 13px; }
-    footer a:hover { text-decoration: underline; }
-
-    @media (max-width: 600px) {
-      .header { padding: 16px 20px; }
-      .hero { padding: 40px 20px 32px; }
-      .hero h1 { font-size: 24px; }
-      main { padding: 32px 16px 60px; }
-      footer { padding: 20px 16px; flex-direction: column; align-items: flex-start; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politique de Confidentialité - ClearBudget</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #f9fafb;
+        }
+        h1, h2 {
+            color: #111827;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .highlight {
+            background-color: #ecfdf5;
+            border-left: 4px solid #10b981;
+            padding: 15px;
+            margin: 20px 0;
+            color: #065f46;
+            font-weight: 500;
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <h1>Politique de Confidentialité de ClearBudget</h1>
+        <p>Dernière mise à jour : Juin 2026</p>
 
-<!-- ── HEADER ── -->
-<header class="header">
-  <div class="brand">
-    <div class="brand-icon">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-        <rect x="2"   y="14" width="5" height="8" rx="1.5"/>
-        <rect x="9.5" y="9"  width="5" height="13" rx="1.5"/>
-        <rect x="17"  y="4"  width="5" height="18" rx="1.5"/>
-      </svg>
+        <div class="highlight">
+            ClearBudget est construit sur un principe fondamental : <strong>la protection absolue de votre vie privée</strong>.
+        </div>
+
+        <h2>1. Collecte et Utilisation des Données</h2>
+        <p>Nous ne collectons, ne stockons et ne transmettons <strong>absolument aucune</strong> de vos données financières ou personnelles. L'application ClearBudget est conçue pour fonctionner de manière autonome et 100% locale sur votre ordinateur.</p>
+
+        <h2>2. Stockage Local et Chiffrement</h2>
+        <p>Toutes vos données (comptes, transactions, budgets, configurations) sont sauvegardées exclusivement sur le disque dur de votre appareil. Ces données sont protégées par un chiffrement de niveau militaire (AES-256-GCM) utilisant un mot de passe que vous êtes la seule personne à connaître. Nous n'avons aucun moyen de récupérer votre mot de passe ni de lire vos données.</p>
+
+        <h2>3. Assistant IA (Local)</h2>
+        <p>Si vous choisissez d'activer les fonctionnalités d'Intelligence Artificielle intégrées (via Ollama), sachez que tous les calculs et générations de texte s'effectuent localement, grâce aux composants de votre propre ordinateur. Aucune donnée n'est envoyée vers des serveurs distants.</p>
+
+        <h2>4. Partage d'Informations</h2>
+        <p>Étant donné que nous ne collectons aucune information, nous n'avons aucune information à vendre, échanger ou transférer à des tiers.</p>
+
+        <h2>5. Nous Contacter</h2>
+        <p>Si vous avez la moindre question concernant cette politique de confidentialité, vous pouvez nous contacter par email à l'adresse suivante : <strong>support@clearbudget.app</strong></p>
     </div>
-    <div>
-      <div class="brand-name">Optima Finance</div>
-      <div class="brand-tagline">Gestion financière personnelle</div>
-    </div>
-  </div>
-  <div class="badge-secure">
-    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-    100 % local — Aucune donnée envoyée
-  </div>
-</header>
-
-<!-- ── HERO ── -->
-<div class="hero">
-  <h1>Politique de Confidentialité</h1>
-  <div class="hero-date">Dernière mise à jour : juin 2026 · Version 2.0</div>
-  <div class="hero-badges">
-    <span class="chip chip-green">
-      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-      Aucune collecte de données
-    </span>
-    <span class="chip chip-blue">
-      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-      Chiffrement AES-256-GCM
-    </span>
-    <span class="chip chip-slate">
-      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-      Fonctionne 100 % hors-ligne (Telegram optionnel)
-    </span>
-  </div>
-</div>
-
-<!-- ── CONTENT ── -->
-<main>
-
-  <div class="summary-card">
-    <p>Optima Finance <strong>ne collecte aucune donnée personnelle</strong>, ne se connecte à aucun serveur externe et ne partage aucune information avec des tiers. L'intégralité de vos données financières reste sur votre appareil, sous votre contrôle exclusif.</p>
-  </div>
-
-  <!-- 1 -->
-  <section>
-    <div class="section-inner">
-      <h2>
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-        Données traitées
-      </h2>
-      <p>Optima Finance ne collecte et ne transmet <strong>aucune donnée</strong>. L'application fonctionne entièrement hors-ligne. Les seules informations traitées sont celles que vous saisissez vous-même :</p>
-      <ul>
-        <li>Relevés bancaires : montants, dates, descriptions, catégories</li>
-        <li>Échéances et abonnements récurrents</li>
-        <li>Paramètres de budget et préférences d'affichage</li>
-      </ul>
-      <p style="margin-top:12px">Ces données sont stockées <strong>exclusivement sur votre appareil</strong>, dans le dossier <code>Documents\MesComptes\database.json</code>.</p>
-    </div>
-  </section>
-
-  <!-- 2 -->
-  <section>
-    <div class="section-inner">
-      <h2>
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-        Sécurité & Chiffrement
-      </h2>
-      <p>Si vous activez la protection par mot de passe, vos données sont chiffrées avec l'algorithme <strong>AES-256-GCM</strong> avant toute écriture sur le disque — le même standard utilisé par les institutions financières et les gouvernements.</p>
-      <ul>
-        <li><strong>Dérivation de clé :</strong> PBKDF2-SHA256, 310 000 itérations</li>
-        <li><strong>Sel cryptographique :</strong> aléatoire et unique par base de données</li>
-        <li><strong>Sans votre mot de passe :</strong> les données sont illisibles</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- 3 -->
-  <section>
-    <div class="section-inner">
-      <h2>
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        Partage des données
-      </h2>
-      <p>Optima Finance ne partage <strong>aucune donnée avec des tiers</strong>. L'application ne contient aucun système de télémétrie, aucun outil analytique (Google Analytics, etc.) et aucun module publicitaire.</p>
-    </div>
-  </section>
-
-  <!-- 4 -->
-  <section>
-    <div class="section-inner">
-      <h2>
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
-        Module Conseiller IA (100 % local)
-      </h2>
-      <p>Le module « Conseiller Financier IA » fonctionne <strong>exclusivement en local</strong> via <strong>Ollama</strong>, installé sur votre propre ordinateur. Vos questions et vos données financières sont traitées <strong>uniquement sur votre machine</strong> et ne sont transmises à <strong>aucun serveur externe</strong>. Aucune clé API, aucun compte tiers et aucune connexion internet ne sont requis pour utiliser le conseiller.</p>
-    </div>
-  </section>
-
-  <!-- 5 -->
-  <section>
-    <div class="section-inner">
-      <h2>
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12 19.79 19.79 0 0 1 1.93 3.4 2 2 0 0 1 3.92 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        Intégration Telegram (optionnelle)
-      </h2>
-      <p>Si vous activez l'intégration Telegram dans les paramètres, l'application se connecte à <strong>l'API officielle Telegram</strong> (<code>api.telegram.org</code>) pour recevoir vos messages et enregistrer vos dépenses automatiquement.</p>
-      <ul>
-        <li><strong>Données transmises :</strong> uniquement les messages que vous envoyez à votre propre bot Telegram</li>
-        <li><strong>Traitement :</strong> les messages sont analysés localement par l'IA pour extraire les montants et catégories</li>
-        <li><strong>Stockage :</strong> seul le résultat (transaction) est conservé dans votre base de données locale</li>
-        <li><strong>Aucun serveur tiers :</strong> vos données passent exclusivement par l'infrastructure Telegram, vers votre appareil</li>
-      </ul>
-      <p style="margin-top:12px">Cette fonctionnalité est <strong>entièrement optionnelle</strong>. Sans configuration Telegram, l'application fonctionne 100 % hors-ligne. La politique de confidentialité de Telegram est disponible sur <a href="https://telegram.org/privacy" style="color:#3b82f6;text-decoration:none">telegram.org/privacy</a>.</p>
-    </div>
-  </section>
-
-  <!-- 6 -->
-  <section>
-    <div class="section-inner">
-      <h2>
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        Partenaires &amp; Technologies Tierces
-      </h2>
-      <p>Optima Finance s'appuie sur les partenaires et technologies suivants pour vous offrir une expérience complète. <strong>Aucun de ces partenaires ne reçoit vos données financières.</strong></p>
-      <ul>
-        <li>
-          <strong>Microsoft</strong> — Distribution via le <strong>Microsoft Store</strong>. Optima Finance est proposé sur la plateforme Microsoft et respecte les politiques de confidentialité, les directives de contenu et les exigences WACK du Microsoft Store.
-          Politique Microsoft : <a href="https://privacy.microsoft.com" style="color:#3b82f6;text-decoration:none">privacy.microsoft.com</a>
-        </li>
-        <li>
-          <strong>Ollama</strong> (Technologies IA locales) — Logiciel open source installé <strong>par l'utilisateur sur son propre ordinateur</strong>. Optima Finance communique uniquement avec l'instance locale Ollama via <code>localhost:11434</code>. Aucune donnée n'est transmise aux serveurs d'Ollama ni à des tiers.
-          Site officiel : <a href="https://ollama.ai" style="color:#3b82f6;text-decoration:none">ollama.ai</a>
-        </li>
-        <li>
-          <strong>Telegram Messenger Inc.</strong> — API de messagerie utilisée pour la fonctionnalité <em>optionnelle</em> d'enregistrement automatique de transactions. Seuls les messages envoyés par l'utilisateur à son propre bot transitent par les serveurs Telegram.
-          Politique Telegram : <a href="https://telegram.org/privacy" style="color:#3b82f6;text-decoration:none">telegram.org/privacy</a>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- 7 -->
-  <section>
-    <div class="section-inner">
-      <h2>
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        Vos droits
-      </h2>
-      <p>Vos données vous appartiennent intégralement. Vous pouvez à tout moment :</p>
-      <ul>
-        <li>Consulter le fichier <code>Documents\MesComptes\database.json</code></li>
-        <li>Exporter vos transactions au format CSV depuis l'application</li>
-        <li>Supprimer définitivement toutes vos données en effaçant ce fichier</li>
-      </ul>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- Contact -->
-  <section>
-    <div class="section-inner">
-      <h2>
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        Contact
-      </h2>
-      <p>Pour toute question relative à cette politique :<br>
-      <a href="mailto:optimprodstudio@gmail.com" style="color:#3b82f6;text-decoration:none">optimprodstudio@gmail.com</a><br>
-      Optima Production — France</p>
-    </div>
-  </section>
-
-</main>
-
-<!-- ── FOOTER ── -->
-<footer>
-  <div class="footer-brand">
-    <div class="footer-icon">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="white">
-        <rect x="2"   y="14" width="5" height="8" rx="1.5"/>
-        <rect x="9.5" y="9"  width="5" height="13" rx="1.5"/>
-        <rect x="17"  y="4"  width="5" height="18" rx="1.5"/>
-      </svg>
-    </div>
-    <span class="footer-name">Optima Finance · Optima Production</span>
-  </div>
-  <span class="footer-copy">© 2026 Optima Production. Tous droits réservés.</span>
-</footer>
-
 </body>
 </html>
